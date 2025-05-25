@@ -110,7 +110,4 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
-.banner {
-  width: 200px; /* imposta larghezza */
-  height: auto; /* mantiene proporzioni */
-}
+
