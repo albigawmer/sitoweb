@@ -1,81 +1,170 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alberto Stocco - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+    body {
+      background: linear-gradient(to right, #1a1a1a, #0d0d0d);
+      color: white;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent 70%);
+      top: -50%;
+      left: -50%;
+      animation: rotateBG 20s linear infinite;
+      z-index: 0;
+    }
+    @keyframes rotateBG {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    header h1, header h2 {
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 4rem;
+      color: #b4f8c8;
+    }
+    header h2 {
+      font-size: 1.5rem;
+      color: #aaa;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      background-color: #111;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      color: #56cfe1;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #fcbf49;
+    }
+    .section {
+      padding: 80px 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #fcbf49;
+    }
+    .section-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .card {
+      background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+      padding: 20px;
+      border-radius: 20px;
+      flex: 1 1 300px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #777;
+    }
+    .highlight {
+      color: #56cfe1;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- 🎞️ CAROSELLO HERO -->
-  <section class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="img/img1.jpg" alt="Slide 1"></div>
-      <div class="swiper-slide"><img src="img/img2.jpg" alt="Slide 2"></div>
-      <div class="swiper-slide"><img src="img/img3.jpg" alt="Slide 3"></div>
-    </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
-  </section>
-
-  <!-- HEADER -->
   <header>
     <h1>Alberto Stocco</h1>
     <h2>Graphic & Brand Designer</h2>
   </header>
 
-  <!-- NAV -->
   <nav>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- SEZIONI -->
   <section class="section" id="about">
-    <h3 class="section-title">About Me</h3>
-    <p class="fade-in">Sono Alberto, un designer specializzato in logo design, identità visiva e contenuti social. Il mio lavoro è aiutare i brand a distinguersi con creatività e precisione.</p>
+    <h3 class="section-title">About</h3>
+    <p>I’m Alberto, a graphic and brand designer passionate about crafting logos, social media designs, and full brand identities. I strive to deliver clean, strategic design solutions that help brands stand out.</p>
   </section>
 
   <section class="section" id="projects">
     <h3 class="section-title">Projects</h3>
-    <div class="section-content fade-in">
+    <div class="section-content">
       <div class="card">
         <h4 class="highlight">Logo Design</h4>
-        <p>Loghi moderni, essenziali e memorabili per la tua visione di brand.</p>
+        <p>Modern, minimal, and memorable logos tailored to your brand’s vision.</p>
       </div>
       <div class="card">
         <h4 class="highlight">Brand Identity</h4>
-        <p>Pacchetti completi con biglietti, flyer e linee guida.</p>
+        <p>Complete branding packages including business cards, flyers, and brand guidelines.</p>
       </div>
       <div class="card">
         <h4 class="highlight">Social Media</h4>
-        <p>Contenuti accattivanti per aumentare l'engagement.</p>
+        <p>Custom visuals optimized for engagement across platforms.</p>
       </div>
       <div class="card">
         <h4 class="highlight">Packaging</h4>
-        <p>Design di confezioni creativi e coerenti col brand.</p>
+        <p>Eye-catching packaging that aligns with your brand’s message.</p>
       </div>
     </div>
   </section>
 
   <section class="section" id="contact">
     <h3 class="section-title">Contact</h3>
-    <p class="fade-in">Email: <span class="highlight">alberto.design@email.com</span></p>
-    <p class="fade-in">Website: <span class="highlight">www.albertostocco.com</span></p>
+    <p>Email me at: <span class="highlight">alberto.design@email.com</span></p>
+    <p>Website: <span class="highlight">www.albertostocco.com</span></p>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 Alberto Stocco. All rights reserved.</p>
   </footer>
 
-  <!-- JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="script.js"></script>
+  <script>
+    // Smooth scrolling
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
 </html>
