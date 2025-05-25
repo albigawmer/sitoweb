@@ -111,6 +111,6 @@ footer {
   transform: translateY(0);
 }
 .banner {
-  width: 700px; /* imposta larghezza */
+  width: 500px; /* imposta larghezza */
   height: auto; /* mantiene proporzioni */
 }
