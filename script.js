@@ -1,16 +1,14 @@
-// Scroll reveal effect
-document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll(".card");
-  
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        entry.target.classList.toggle("reveal", entry.isIntersecting);
-      });
-    }, { threshold: 0.1 });
-  
-    cards.forEach(card => {
-      card.classList.add("hidden");
-      observer.observe(card);
-    });
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
   });
-  
+}, {
+  threshold: 0.1
+});
+
+sections.forEach(section => {
+  observer.observe(section);
+});

@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Manrope', sans-serif;
+  background: #0d0d0d;
+  color: #eaeaea;
+}
+nav {
+  background: #111;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #222;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+nav h1 {
+  font-size: 1.5rem;
+  color: #ff5252;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+nav ul li a {
+  color: #eaeaea;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+nav ul li a:hover {
+  color: #ff5252;
+}
+header {
+  padding: 5rem 2rem;
+  background: #111;
+  text-align: center;
+}
+header h2.glow-title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  animation: aura 2s infinite alternate;
+}
+header p {
+  font-size: 1.2rem;
+  color: #aaa;
+}
+section {
+  padding: 4rem 2rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+section#chi-sono {
+  background: #141414;
+}
+section#chi-sono h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: #ff5252;
+}
+section#chi-sono p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+  text-align: center;
+}
+section#lavori {
+  background: #1a1a1a;
+}
+section#lavori h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
+  color: #ff5252;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.card {
+  background: #222;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(255, 82, 82, 0.2);
+}
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.card .info {
+  padding: 1.2rem;
+}
+.card .info h3 {
+  color: #ff5252;
+  margin-bottom: 0.5rem;
+}
+.card .info p {
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+section#contatti {
+  background: #111;
+  text-align: center;
+}
+section#contatti h2 {
+  font-size: 2rem;
+  color: #ff5252;
+  margin-bottom: 1rem;
+}
+section#contatti p {
+  color: #aaa;
+  font-size: 1rem;
+}
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #000;
+  font-size: 0.9rem;
+  color: #666;
+  border-top: 1px solid #222;
+}
+@keyframes aura {
+  0% {
+    text-shadow: 0 0 8px #ff5252, 0 0 16px #ff5252;
+  }
+  100% {
+    text-shadow: 0 0 2px #ff5252;
+  }
+}
